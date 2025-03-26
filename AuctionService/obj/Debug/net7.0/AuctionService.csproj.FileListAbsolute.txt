@@ -39,3 +39,4 @@
 /Users/user/Developer/C#/Carsties/src/AuctionService/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /Users/user/Developer/C#/Carsties/src/AuctionService/bin/Debug/net7.0/Mono.TextTemplating.dll
 /Users/user/Developer/C#/Carsties/src/AuctionService/bin/Debug/net7.0/System.CodeDom.dll
+/Users/user/Developer/C#/Carsties/src/AuctionService/obj/Debug/net7.0/AuctionService.sourcelink.json
