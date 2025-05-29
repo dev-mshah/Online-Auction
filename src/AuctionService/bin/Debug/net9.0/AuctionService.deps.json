@@ -11,7 +11,8 @@
           "AutoMapper": "14.0.0",
           "Microsoft.AspNetCore.OpenApi": "9.0.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.5",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
+          "Scalar.AspNetCore": "2.4.4"
         },
         "runtime": {
           "AuctionService.dll": {}
@@ -426,6 +427,14 @@
           }
         }
       },
+      "Scalar.AspNetCore/2.4.4": {
+        "runtime": {
+          "lib/net9.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.4.4.0",
+            "fileVersion": "2.4.4.0"
+          }
+        }
+      },
       "System.CodeDom/4.4.0": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
@@ -721,6 +730,13 @@
       "sha512": "sha512-/hHd9MqTRVDgIpsToCcxMDxZqla0HAQACiITkq1+L9J2hmHKV6lBAPlauF+dlNSfHpus7rrljWx4nAanKD6qAw==",
       "path": "npgsql.entityframeworkcore.postgresql/8.0.4",
       "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.4.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EH8AwPuiHK49LqUfmSSgzd8XTTqtDzV/F+3w6CVOhSaU3ly1LRUszcZXMG2GTUjKh1TtyTbsBbwx1sRTnQnsFQ==",
+      "path": "scalar.aspnetcore/2.4.4",
+      "hashPath": "scalar.aspnetcore.2.4.4.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",

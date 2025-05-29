@@ -105,3 +105,4 @@
 /Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/user/Developer/demo/Artsi/src/AuctionService/obj/Debug/net9.0/AuctionService.sourcelink.json
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/Scalar.AspNetCore.dll

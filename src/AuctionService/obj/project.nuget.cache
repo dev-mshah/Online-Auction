@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SCp7DQa+cgA=",
+  "dgSpecHash": "xXdeOf/RcZU=",
   "success": true,
   "projectFilePath": "/Users/user/Developer/demo/Artsi/src/AuctionService/AuctionService.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "/Users/user/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/user/.nuget/packages/npgsql/8.0.3/npgsql.8.0.3.nupkg.sha512",
     "/Users/user/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.4/npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
+    "/Users/user/.nuget/packages/scalar.aspnetcore/2.4.4/scalar.aspnetcore.2.4.4.nupkg.sha512",
     "/Users/user/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.composition/6.0.0/system.composition.6.0.0.nupkg.sha512",
