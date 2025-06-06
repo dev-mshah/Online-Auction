@@ -106,3 +106,10 @@
 /Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/user/Developer/demo/Artsi/src/AuctionService/obj/Debug/net9.0/AuctionService.sourcelink.json
 /Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/Scalar.AspNetCore.dll
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/MassTransit.dll
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/MassTransit.Abstractions.dll
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/MassTransit.RabbitMqTransport.dll
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/RabbitMQ.Client.dll
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/Contracts.dll
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/Contracts.pdb
+/Users/user/Developer/demo/Artsi/src/AuctionService/bin/Debug/net9.0/MassTransit.EntityFrameworkCoreIntegration.dll
