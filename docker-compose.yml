@@ -2,11 +2,13 @@ services:
   postgres: 
     image: postgres
     environment:
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=identity
     ports:
-      - 5432:5432
+      - "5432:5432"
     volumes:
-     - /var/lib/postgresql/data
+     - pgdata:/var/lib/postgresql/data
   
   mongodb:
     image: mongo
@@ -14,13 +16,64 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=password
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
-      - /var/lib/mongodb/data
+      - mongodata:/data/db
   
   rabbitmq:
     image: rabbitmq:3-management-alpine
     ports:
-      - 5672:5672
-      - 15672:15672
-    
+      - "5672:5672"
+      - "15672:15672"
+  
+  auction-svc:
+    image: auction-svc:latest
+    build:
+      context: .
+      dockerfile: src/AuctionService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - RabbitMQ__HostName=rabbitmq
+      - ConnectionStrings__DefaultConnection=Server=postgres;Port=5432;Database=auctions;User Id=postgres;Password=password;
+      - IdentityServiceUrl=http://identity-svc
+    ports:
+      - "7001:80"
+    depends_on:
+      - postgres
+      - rabbitmq
+  
+  search-svc:
+    image: search-svc:latest
+    build:
+      context: .
+      dockerfile: src/SearchService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - RabbitMQ__HostName=rabbitmq
+      - ConnectionStrings__MongoDbConnection=mongodb://root:password@mongodb
+      - AuctionServiceUrl=http://auction-svc
+    ports:
+      - "7002:80"
+    depends_on:
+      - mongodb
+      - rabbitmq
+  
+  identity-svc:
+    image: identity-svc:latest
+    build:
+      context: .
+      dockerfile: src/IdentityService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Server=postgres;Port=5432;Database=identity;User Id=postgres;Password=password;
+    ports:
+      - "5001:80"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:
+  mongodata:

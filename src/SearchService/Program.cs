@@ -22,8 +22,13 @@ builder.Services.AddMassTransit(x =>
     x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("search", false));
 
     x.UsingRabbitMq((context, cfg) =>
-    
+
     {
+        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", h =>
+      {
+          h.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+          h.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+      });
         cfg.ReceiveEndpoint("search-auction-created", e =>
         {
             e.UseMessageRetry(r => r.Interval(5, 5));
@@ -42,13 +47,13 @@ app.MapControllers();
 app.Lifetime.ApplicationStarted.Register(async () =>
 {
     try
-{
-    await DbInitializer.InitDb(app);
-}
-catch (Exception e)
-{
-    Console.WriteLine(e);
-}
+    {
+        await DbInitializer.InitDb(app);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
 
 });
 
@@ -60,5 +65,4 @@ app.Run();
 static IAsyncPolicy<HttpResponseMessage> GetPolicy()
 => HttpPolicyExtensions.HandleTransientHttpError().OrResult(msg => msg.StatusCode == HttpStatusCode.NotFound)
 .WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
-
 

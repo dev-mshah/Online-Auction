@@ -73,7 +73,7 @@ public class AuctionsController : ControllerBase
 
         return CreatedAtAction(nameof(GetAuctionById), new { auction.Id }, newAuction);
     }
-
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<ActionResult> UpdateAuction(Guid id, UpdateAuctionDto updateAuctionDto)
     {
